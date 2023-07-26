@@ -125,7 +125,7 @@ with st.container():
     # Função para agrupar os marcadores
     marker_cluster = MarkerCluster().add_to(mapa)
 
-    df1_cidade_localizacao_restaurantes = df1_cidade_localizacao_restaurantes.head(20)
+    df1_cidade_localizacao_restaurantes = df1_cidade_localizacao_restaurantes
 
     for i , localizacao in df1_cidade_localizacao_restaurantes.iterrows():
       folium.Marker([localizacao['Latitude'], localizacao['Longitude']], icon=folium.Icon(icon='pushpin'), popup=localizacao[['Average Cost for two', 'Cuisines', 'Aggregate rating']]).add_to(marker_cluster)
