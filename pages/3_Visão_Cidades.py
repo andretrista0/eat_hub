@@ -98,7 +98,7 @@ with st.container():
     st.markdown('#### Top 10 cidades com mais restaurantes')
     df1_top10_cidade_restaurantes = df1.loc[:,['Country','City','Restaurant ID']].groupby(['Country','City']).nunique().sort_values(by=['Restaurant ID'], ascending=False).reset_index()
     df1_top10_cidade_restaurantes = df1_top10_cidade_restaurantes[:10]
-    fig = px.bar(df1_top10_cidade_restaurantes, x='City', y='Restaurant ID', color='Country', labels={'City':'Cidade', 'Restaurant iD':'Quantidade de Restaurantes', 'Country':'País'})
+    fig = px.bar(df1_top10_cidade_restaurantes, x='City', y='Restaurant ID', color='Country', labels={'City':'Cidade', 'Restaurant ID':'Quantidade de Restaurantes', 'Country':'País'})
     st.plotly_chart(fig, use_container_width=True)
     
 
@@ -109,7 +109,7 @@ with st.container():
         st.markdown('#### Top 7 cidades com restaurantes com avalição média acima de 4')
         df1_top7_cidade_rest_nota4 = df1.loc[df1['Aggregate rating']>4, ['Country','City', 'Restaurant ID']].groupby(['Country','City']).count().sort_values(by=['Restaurant ID'], ascending=False).reset_index()
         df1_top7_cidade_rest_nota4 = df1_top7_cidade_rest_nota4[:7]
-        fig = px.bar(df1_top7_cidade_rest_nota4, x='City', y='Restaurant ID', color='Country', labels={'City':'Cidade', 'Restaurant iD':'Quantidade de Restaurantes', 'Country':'País'})
+        fig = px.bar(df1_top7_cidade_rest_nota4, x='City', y='Restaurant ID', color='Country', labels={'City':'Cidade', 'Restaurant ID':'Quantidade de Restaurantes', 'Country':'País'})
         st.plotly_chart(fig, use_container_width=True)
         
         
@@ -117,7 +117,7 @@ with st.container():
         st.markdown('#### Top 7 cidades com restaurantes com avaliação média abaixo de 2.5')
         df1_top7_cidade_rest_nota25 = df1.loc[df1['Aggregate rating']<2.5, ['Country','City', 'Restaurant ID']].groupby(['Country','City']).count().sort_values(by=['Restaurant ID'], ascending=False).reset_index()
         df1_top7_cidade_rest_nota25 = df1_top7_cidade_rest_nota25[:7]
-        fig = px.bar(df1_top7_cidade_rest_nota25, x='City', y='Restaurant ID', color='Country', labels={'City':'Cidade', 'Restaurant iD':'Quantidade de Restaurantes', 'Country':'País'})
+        fig = px.bar(df1_top7_cidade_rest_nota25, x='City', y='Restaurant ID', color='Country', labels={'City':'Cidade', 'Restaurant ID':'Quantidade de Restaurantes', 'Country':'País'})
         st.plotly_chart(fig, use_container_width=True)    
     
 
