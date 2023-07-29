@@ -80,7 +80,7 @@ lista_paises = list(array_paises)
 # MENU LATERAL
 # ==================================================
 logo = Image.open('logo_eathub2.png')
-st.sidebar.image(logo, width=300)
+st.sidebar.image(logo, width=250)
 st.sidebar.markdown("""---""")
 st.sidebar.markdown('### Filtros')
 
