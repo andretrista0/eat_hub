@@ -80,7 +80,7 @@ lista_paises = list(array_paises)
 # MENU LATERAL
 # ==================================================
 logo = Image.open('logo_eathub2.png')
-st.sidebar.image(logo, width=300)
+st.sidebar.image(logo, width=125)
 st.sidebar.markdown("""---""")
 st.sidebar.markdown('### Filtros')
 
@@ -99,7 +99,8 @@ with st.container():
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         rest_cadastrados = df1['Restaurant ID'].nunique()
-        col1.metric('Restaurantes', rest_cadastrados)
+        formatted_rest_cadastrados = "{:,.0f}".format(rest_cadastrados)
+        col1.metric('Restaurantes', formatted_rest_cadastrados) 
     with col2:
         paises_cadastrados = df1['Country Code'].nunique()
         col2.metric('Países', paises_cadastrados)
@@ -108,7 +109,8 @@ with st.container():
         col3.metric('Cidades', cidades_cadastradas)
     with col4:
         avaliacoes_cadastradas = df1['Votes'].sum()
-        col4.metric('Avaliações', avaliacoes_cadastradas)
+        formatted_rest_cadastrados = "{:,.0f}".format(avaliacoes_cadastradas)
+        col4.metric('Avaliações', formatted_rest_cadastrados)        
     with col5:
         culinarias_cadastradas = df1['Cuisines'].nunique()
         col5.metric('Culinárias', culinarias_cadastradas)
