@@ -89,7 +89,7 @@ df3 = df3.reset_index()
 # MENU LATERAL
 # ==================================================
 logo = Image.open('logo_eathub2.png')
-st.sidebar.image(logo, width=300)
+st.sidebar.image(logo, width=250)
 st.sidebar.markdown("""---""")
 st.sidebar.markdown('### Filtros')
 
@@ -128,11 +128,31 @@ with st.container():
 
 
         
+#with st.container():
+#   st.header(f'Top {filtro_qtd_rest} Restaurantes')
+#    df1_top_melhores_rest = df1.loc[:,['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines', 'Average Cost for two','Aggregate rating', 'Votes']].groupby(['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines']).mean().round(2).sort_values(by='Aggregate rating', ascending=False).reset_index()
+#    st.table(df1_top_melhores_rest.head(filtro_qtd_rest))
+
 with st.container():
     st.header(f'Top {filtro_qtd_rest} Restaurantes')
     df1_top_melhores_rest = df1.loc[:,['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines', 'Average Cost for two','Aggregate rating', 'Votes']].groupby(['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines']).mean().round(2).sort_values(by='Aggregate rating', ascending=False).reset_index()
+
+    # Renomear as colunas para o português
+    df1_top_melhores_rest.rename(columns={
+        'Restaurant ID': 'ID do Restaurante',
+        'Restaurant Name': 'Nome do Restaurante',
+        'Country': 'País',
+        'City': 'Cidade',
+        'Cuisines': 'Cozinhas',
+        'Average Cost for two': 'Custo Médio para Dois',
+        'Aggregate rating': 'Avaliação Média',
+        'Votes': 'Votos'
+    }, inplace=True)
+
+    # Definir o índice iniciando em 1
+    df1_top_melhores_rest.index = range(1, len(df1_top_melhores_rest) + 1)
+
     st.table(df1_top_melhores_rest.head(filtro_qtd_rest))
-        
         
 with st.container():
     col1, col2 = st.columns(2)
