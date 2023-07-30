@@ -57,8 +57,8 @@ Abaixo detalhamos cada visão com seu respectivo conjunto de métricas:
 #### Visão dos tipos culinários
 - Top 5 restaurantes com maior nota na plataforma
 - Melhores restaurantes por país e tipo culinário;
-- Tipos culinários com maior;
-- Tipos culinários com menor.
+- Tipos culinários com maior nota;
+- Tipos culinários com menor nota.
 
 
 #### TOP 3 INSIGHTS DE DADOS
