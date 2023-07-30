@@ -114,7 +114,7 @@ with st.container():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown('#### Média de Avaliação feitas por País')
+        st.markdown('#### Média de Avaliações Registradas por País')
         # - Média de avaliações feitas por país
         df1_media_avaliacao_pais = df1.loc[:,['Country', 'Votes']].groupby('Country').mean().sort_values(by=['Votes'], ascending=False).reset_index()
         fig = px.bar(df1_media_avaliacao_pais, x='Country', y='Votes', labels={'Country':'País', 'Votes':'Quantidade de Média de Avaliações'})
@@ -122,7 +122,7 @@ with st.container():
         
         
     with col2:
-        st.markdown('#### Média de Preço de um Prato Para Dois')
+        st.markdown('#### Média de Preço de Um Prato Para Duas Pessoas por País')
         # - Preço de um prato para duas pessoas
         df1_media_custo2_pais = df1.loc[:,['Country', 'Average Cost for two']].groupby('Country').mean().round(2).sort_values(by=['Average Cost for two'], ascending=False).reset_index()
         fig= px.bar(df1_media_custo2_pais, x='Country', y='Average Cost for two', labels={'Country':'País', 'Average Cost for two':'Preço Médio de um Prato Para Dois'})
