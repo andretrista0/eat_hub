@@ -112,7 +112,7 @@ st.header('Visão Culinária')
 st.markdown("""---""")
 
 with st.container():
-    st.header('Top 5 Restaurantes')
+    st.header('Top 5 restaurantes com maior nota na plataforma')
     df3_top_melhores_rest = df3.loc[:,['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines', 'Average Cost for two','Aggregate rating', 'Votes']].groupby(['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines']).mean().round(2).sort_values(by='Aggregate rating', ascending=False).reset_index()
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
@@ -134,7 +134,7 @@ with st.container():
 #    st.table(df1_top_melhores_rest.head(filtro_qtd_rest))
 
 with st.container():
-    st.header(f'Top {filtro_qtd_rest} Restaurantes')
+    st.header(f'Top {filtro_qtd_rest} restaurantes ')
     df1_top_melhores_rest = df1.loc[:,['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines', 'Average Cost for two','Aggregate rating', 'Votes']].groupby(['Restaurant ID', 'Restaurant Name', 'Country', 'City', 'Cuisines']).mean().round(2).sort_values(by='Aggregate rating', ascending=False).reset_index()
 
     # Renomear as colunas para o português
@@ -157,14 +157,14 @@ with st.container():
 with st.container():
     col1, col2 = st.columns(2)
     with col1:
-        st.header(f'Top {filtro_qtd_rest} melhores tipos de culinários')
+        st.header(f'Top {filtro_qtd_rest} tipos de culinários com maior nota')
         df1_top_melhores_rest_culinaria = df2.loc[:,['Cuisines', 'Aggregate rating']].groupby(['Cuisines']).mean().round(2).sort_values(by='Aggregate rating', ascending=False).reset_index()
         fig = px.bar(df1_top_melhores_rest_culinaria.head(filtro_qtd_rest), x='Cuisines', y='Aggregate rating', labels={'Cuisines': 'Tipo de Culinária', 'Aggregate rating': 'Avaliação Média'}, text_auto=True)
         st.plotly_chart(fig, use_container_width=True)
         
         
     with col2:
-        st.header(f'Top {filtro_qtd_rest} piores tipos de culinários')
+        st.header(f'Top {filtro_qtd_rest} tipos de culinários com menor nota')
         df1_top_piores_rest_culinaria = df2.loc[:,['Cuisines', 'Aggregate rating']].groupby(['Cuisines']).mean().round(2).sort_values(by='Aggregate rating', ascending=True).reset_index()
         fig = px.bar(df1_top_piores_rest_culinaria.head(filtro_qtd_rest), x='Cuisines', y='Aggregate rating', labels={'Cuisines': 'Tipo de Culinária', 'Aggregate rating': 'Avaliação Média'}, text_auto=True)
         st.plotly_chart(fig, use_container_width=True)    
