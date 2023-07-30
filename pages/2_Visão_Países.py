@@ -95,14 +95,14 @@ st.header('Visão Países')
 st.markdown("""---""")
 
 with st.container():
-    st.markdown('#### Quantidade de Restaurantes Registrados por País')
+    st.markdown('#### Quantidade de restaurantes registrados por país')
     # - Quantidade de restaurantes registrados por país
     df1_qtd_rest_pais = df1.loc[:,['Country', 'Restaurant ID']].groupby('Country').nunique().sort_values(by=['Restaurant ID'], ascending=False).reset_index()
     fig = px.bar(df1_qtd_rest_pais, x='Country', y='Restaurant ID', labels={'Country':'País', 'Restaurant ID':'Quantidade de Restaurantes'})
     st.plotly_chart(fig, use_container_width=True)
 
 with st.container():
-    st.markdown('#### Quantidade de Cidades Registradas por País')
+    st.markdown('#### Quantidade de cidades registradas por país')
     # - Quantidade de cidades registrados por país
     df1_qtd_cidade_pais = df1.loc[:,['Country', 'City']].groupby('Country').nunique().sort_values(by=['City'], ascending=False).reset_index()
     fig = px.bar(df1_qtd_cidade_pais, x='Country', y='City', labels={'Country':'País', 'City':'Quantidade de Cidades'})
@@ -114,7 +114,7 @@ with st.container():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown('#### Média de Avaliações Registradas por País')
+        st.markdown('#### Média de avaliações registradas por país')
         # - Média de avaliações feitas por país
         df1_media_avaliacao_pais = df1.loc[:,['Country', 'Votes']].groupby('Country').mean().sort_values(by=['Votes'], ascending=False).reset_index()
         fig = px.bar(df1_media_avaliacao_pais, x='Country', y='Votes', labels={'Country':'País', 'Votes':'Quantidade de Média de Avaliações'})
@@ -122,7 +122,7 @@ with st.container():
         
         
     with col2:
-        st.markdown('#### Média de Preço de Um Prato Para Duas Pessoas por País')
+        st.markdown('#### Média de preço de Um Prato Para Duas Pessoas por país')
         # - Preço de um prato para duas pessoas
         df1_media_custo2_pais = df1.loc[:,['Country', 'Average Cost for two']].groupby('Country').mean().round(2).sort_values(by=['Average Cost for two'], ascending=False).reset_index()
         fig= px.bar(df1_media_custo2_pais, x='Country', y='Average Cost for two', labels={'Country':'País', 'Average Cost for two':'Preço Médio de um Prato Para Dois'})
