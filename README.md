@@ -13,13 +13,17 @@ O foco dessa análise é fornecer insights relevantes sobre os restaurantes cada
 
 Ao conduzir a análise dos dados da Eat Hub e criar os dashboards solicitados pelo CEO, foram consideradas algumas premissas importantes para garantir a qualidade e a relevância dos resultados. As principais premissas assumidas para essa análise são as seguintes:
 
-Qualidade dos Dados: Partimos do pressuposto de que os dados disponíveis na plataforma da Eat Hub estão corretos, completos e livres de inconsistências significativas. Caso sejam identificadas questões de qualidade dos dados durante o processo de análise, serão tomadas medidas para corrigi-las ou tratá-las adequadamente.
+#### Qualidade dos Dados: 
+Partimos do pressuposto de que os dados disponíveis na plataforma da Eat Hub estão corretos, completos e livres de inconsistências significativas. Caso sejam identificadas questões de qualidade dos dados durante o processo de análise, serão tomadas medidas para corrigi-las ou tratá-las adequadamente.
 
-Definição de País, Cidade e Tipo de Culinária: Pressupõe-se que os registros dos restaurantes incluam informações claras e consistentes sobre país, cidade e tipo de culinária servida. Caso existam ambiguidades ou inconsistências nessas definições, serão aplicadas medidas para padronizar-las e garantir a precisão da análise.
+#### Definição de País, Cidade e Tipo de Culinária: 
+Pressupõe-se que os registros dos restaurantes incluam informações claras e consistentes sobre país, cidade e tipo de culinária servida. Caso existam ambiguidades ou inconsistências nessas definições, serão aplicadas medidas para padronizar-las e garantir a precisão da análise.
 
-Avaliações de Clientes: Considera-se que as avaliações dos clientes refletem de forma fidedigna a experiência dos mesmos com os restaurantes. 
+#### Avaliações de Clientes: 
+Considera-se que as avaliações dos clientes refletem de forma fidedigna a experiência dos mesmos com os restaurantes. 
 
-Representatividade da Amostra: A análise leva em conta que a amostra de restaurantes cadastrados na plataforma representa de forma justa a diversidade de estabelecimentos presentes no mercado. A seleção aleatória ou estratificada dos restaurantes é fundamental para obter resultados representativos.
+#### Representatividade da Amostra: 
+A análise leva em conta que a amostra de restaurantes cadastrados na plataforma representa de forma justa a diversidade de estabelecimentos presentes no mercado. A seleção aleatória ou estratificada dos restaurantes é fundamental para obter resultados representativos.
 
 Essas premissas fundamentam a análise dos dados e a criação dos dashboards, assegurando que as informações apresentadas sejam confiáveis, relevantes e úteis para o CEO. 
 
@@ -48,7 +52,7 @@ Abaixo detalhamos cada visão com seu respectivo conjunto de métricas:
 - Top 10 cidades com mais restaurantes;
 - Top 7 cidades com mais restaurantes com avaliação média acima de 4;
 - Top 7 cidades com mais restaurantes com avaliação média abaixo de 2.5;
-- Top 10 cidades com mais restaurantes com maior diversidade de tipos culinários..
+- Top 10 cidades com mais restaurantes com maior diversidade de tipos culinários.
 
 #### Visão dos tipos culinários
 - Top 5 restaurantes com maior nota na plataforma
